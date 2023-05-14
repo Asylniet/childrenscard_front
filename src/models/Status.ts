@@ -1,0 +1,1 @@
+export type Status = 'IDLE' | 'PENDING' | 'SUCCEEDED' | 'FAILED';
