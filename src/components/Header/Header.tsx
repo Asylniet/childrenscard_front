@@ -1,40 +1,42 @@
 import React from 'react';
 import NextLink from 'next/link';
+import Image from 'next/image';
+import { ChooseLanguage } from './ChooseLanguage';
 
-import { HeaderLogo } from '../svg/HeaderLogo';
-import { LogoutIcon } from '../svg/LogoutIcon';
-import { Avatar } from '../common/Avatar';
+import { SearchIcon } from '../svg/SearchIcon';
+import { LocationIcon } from '../svg/LocationIcon';
 
 export const Header: React.FC = () => {
     return (
         <header>
-            <div className="header-wrapper container">
-                <NextLink href='/main'>
-                    <HeaderLogo />
+            <div className="header-wrapper container p0">
+                <ul className="links">
+                    <li className='option'>
+                        <NextLink href='/categories'>
+                            Категории
+                        </NextLink>
+                    </li>
+                    <li className='option'>
+                        <NextLink href='/discounts'>
+                            Скидки
+                        </NextLink>
+                    </li>
+                    <li className='option'>
+                        <SearchIcon />
+                    </li>
+                </ul>
+                <NextLink href='/'>
+                    <Image src='/images/headerLogo.png' alt='Childrenscard' height={42} width={160} />
                 </NextLink>
                 <ul className="links">
                     <li>
-                        <NextLink href='/main'>
-                            Главная
-                        </NextLink>
+                        <ChooseLanguage />
                     </li>
-                    <li>
-                        <NextLink href='/'>
-                            Моя страница
-                        </NextLink>
-                    </li>
-                    <li>
-                        <NextLink href='/bestTeacher'>
-                            Лучший преподаватель
-                        </NextLink>
-                    </li>
-                    <li>
-                        <NextLink href='/terms'>
-                            Правила оценивания
-                        </NextLink>
+                    <li className='flex-center option'>
+                        <span>Алматы</span>
+                        <LocationIcon />
                     </li>
                 </ul>
-                <Avatar name='Alma' surname='Valley' />
             </div>
         </header>
     )

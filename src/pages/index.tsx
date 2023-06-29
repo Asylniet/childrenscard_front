@@ -1,14 +1,14 @@
 import React from "react";
-import { Header } from "@/components/Header/Header";
-import { ProfileHero } from "@/components/Profile/ProfileHero";
-import { Comments } from "@/components/Comment/Comments";
+import { Hero } from "@/components/Hero/Hero";
+import { Recomendations } from "@/components/Recomendations/Recomendations";
+import { Interesting } from "@/components/Recomendations/Interesting";
 
 export default function Home() {
   return (
-    <main>
-        <Header />
-        <ProfileHero />
-        <Comments />
-    </main>
+    <>
+      <Hero />
+      <Recomendations />
+      <Interesting />
+    </>
   )
 }
